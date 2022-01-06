@@ -15,9 +15,14 @@ module EtAnalytics
       return @connection if @connection
 
       @instance_mutex.synchronize do
-        db_config_path = File.join(EtAnalytics.root, "config/database.yml")
-        db_config = YAML.load(File.read(db_config_path))
-        @connection ||= new(ActiveRecord::Base.establish_connection(db_config))
+        @connection ||= new(
+          ActiveRecord::Base.establish_connection(
+            adapter: ENV.fetch('DB_ADAPTER', 'postgresql'),
+            host: '127.0.0.1',
+            username: ENV.fetch('DB_USER', 'prabandham'),
+            password: ENV.fetch('DB_PASSWORD', ''),
+            database: ENV.fetch('DB_NAME', 'expense_tracker'),
+          ))
       end
   
       @connection

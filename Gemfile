@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # Specify your gem's dependencies in et_analytics.gemspec
-gemspec
+# gemspec
 
 gem "activerecord"
 gem "activerecord-jdbcpostgresql-adapter"

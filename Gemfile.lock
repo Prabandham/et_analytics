@@ -1,8 +1,3 @@
-PATH
-  remote: .
-  specs:
-    et_analytics (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -77,12 +72,11 @@ GEM
     zeitwerk (2.5.3)
 
 PLATFORMS
-  universal-java-17
+  universal-java-1.8
 
 DEPENDENCIES
   activerecord
   activerecord-jdbcpostgresql-adapter
-  et_analytics!
   pry
   rake (~> 13.0)
   redis
@@ -90,4 +84,4 @@ DEPENDENCIES
   rubocop (~> 1.21)
 
 BUNDLED WITH
-   2.3.4
+   2.2.14
